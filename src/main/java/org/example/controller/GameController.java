@@ -65,6 +65,7 @@ public class GameController {
 
     private void printEnteredSymbols(List<Character> symbols) {
         if (symbols.isEmpty()) {
+            printer.output("");
             return;
         }
         StringBuilder builder = new StringBuilder();
