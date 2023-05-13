@@ -11,15 +11,13 @@ public class Word implements Iterable<Letter> {
     public Word(String s) {
         char[] chars = s.toUpperCase().toCharArray();
         for (char symbol : chars) {
-            letters.add(new Letter(symbol, Letter.HIDE));
+            letters.add(new Letter(symbol));
         }
 
-        List<Letter> temp = new ArrayList<>(letters);
-        Collections.shuffle(temp);
-        for (int i = 0; i < 3; i++) {
-            temp.get(i).show();
-        }
+    }
 
+    public int size() {
+        return letters.size();
     }
 
     public boolean contains(char symbol) {
@@ -46,6 +44,10 @@ public class Word implements Iterable<Letter> {
                 letter.show();
             }
         }
+    }
+
+    public void open(int index) {
+        letters.get(index).show();
     }
 
     public void openAll() {

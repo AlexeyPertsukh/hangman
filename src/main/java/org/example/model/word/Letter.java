@@ -7,9 +7,8 @@ public class Letter {
     protected char symbol;
     protected boolean visible;
 
-    public Letter(char symbol, boolean visible) {
+    public Letter(char symbol) {
         this.symbol = symbol;
-        this.visible = visible;
     }
 
     public char getSymbol() {
