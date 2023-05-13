@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Game {
     public final static int MAX_FAIL = 6;
-    private final static int OPEN_LETTERS = 3;
+
     private final Word word;
     private final List<Character> symbols = new ArrayList<>();
 
@@ -16,7 +16,6 @@ public class Game {
 
     public Game(Word word) {
         this.word = word;
-        openRandomLetters(OPEN_LETTERS);
     }
 
     public void addSymbol(char symbol) {
@@ -55,13 +54,13 @@ public class Game {
         return fail >= MAX_FAIL;
     }
 
-    private void openRandomLetters(int count) {
+    public void openRandomLetters(int number) {
         List<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < word.size(); i++) {
             numbers.add(i);
         }
         Collections.shuffle(numbers);
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < number; i++) {
             word.open(i);
         }
 

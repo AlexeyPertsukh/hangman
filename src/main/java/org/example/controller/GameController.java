@@ -11,21 +11,21 @@ import org.example.view.reader.Reader;
 import java.util.List;
 
 public class GameController {
+    private final static int OPEN_LETTERS = 3;
     private final Printer printer;
     private final Reader reader;
-    //    private final Repository repository;
     private final Game game;
 
     public GameController(Printer printer, Reader reader, Repository repository) {
         this.printer = printer;
         this.reader = reader;
 
-//        this.repository = repository;
         Word word = new Word(repository.getRandom());
         game = new Game(word);
     }
 
     public void go() {
+        game.openRandomLetters(OPEN_LETTERS);
         CharDialogView dialog = new CharDialogView(printer, reader, "введите букву: ", "ошибка ввода");
 
         while (true) {
