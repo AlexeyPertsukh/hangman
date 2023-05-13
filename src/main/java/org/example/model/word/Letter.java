@@ -1,8 +1,8 @@
 package org.example.model.word;
 
 public class Letter {
-    public static final boolean HIDE = false;
-    public static final boolean SHOW = true;
+    public static final boolean DISABLE = false;
+    public static final boolean ENABLE = true;
 
     protected char symbol;
     protected boolean visible;
@@ -23,6 +23,6 @@ public class Letter {
     }
 
     protected void open() {
-        visible = SHOW;
+        visible = ENABLE;
     }
 }

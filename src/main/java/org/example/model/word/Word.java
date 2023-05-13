@@ -53,7 +53,7 @@ public class Word implements Iterable<Letter> {
         letters.forEach(Letter::open);
     }
 
-    public boolean allLettersShown() {
+    public boolean isAllLettersOpen() {
         for (Letter letter : letters) {
             if (!letter.isVisible()) {
                 return false;

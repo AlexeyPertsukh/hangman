@@ -29,7 +29,7 @@ public class GameController {
         CharDialogView dialog = new CharDialogView(printer, reader, "введите букву: ", "ошибка ввода");
 
         while (true) {
-            String[] picture = PictureFactory.create(game.getFail());
+            String[] picture = PictureFactory.create(game.getFailCount());
             printer.output(picture);
             String stringWord = wordToString(game.getWord());
             printer.output(stringWord);

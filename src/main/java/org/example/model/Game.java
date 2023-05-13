@@ -12,7 +12,7 @@ public class Game {
     private final Word word;
     private final List<Character> symbols = new ArrayList<>();
 
-    private int fail;
+    private int failCount;
 
     public Game(Word word) {
         this.word = word;
@@ -30,7 +30,7 @@ public class Game {
         if(word.contains(symbol)) {
             word.open(symbol);
         } else {
-            fail++;
+            failCount++;
         }
     }
 
@@ -42,16 +42,16 @@ public class Game {
         return symbols;
     }
 
-    public int getFail() {
-        return fail;
+    public int getFailCount() {
+        return failCount;
     }
 
     public boolean isWin() {
-        return word.allLettersShown();
+        return word.isAllLettersOpen();
     }
 
     public boolean isLoose() {
-        return fail >= MAX_FAIL;
+        return failCount >= MAX_FAIL;
     }
 
     public void openRandomLetters(int number) {
