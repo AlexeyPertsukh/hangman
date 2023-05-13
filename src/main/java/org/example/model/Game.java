@@ -16,14 +16,10 @@ public class Game {
 
     public Game(Word word) {
         this.word = word;
-        showRandomLetters(OPEN_LETTERS);
+        openRandomLetters(OPEN_LETTERS);
     }
 
     public void addSymbol(char symbol) {
-        if (isLoose()) {
-            throw new IllegalArgumentException("too many tries ");
-        }
-
         symbol = Character.toUpperCase(symbol);
 
         if(symbols.contains(symbol)) {
@@ -31,6 +27,7 @@ public class Game {
         }
 
         symbols.add(symbol);
+
         if(word.contains(symbol)) {
             word.open(symbol);
         } else {
@@ -58,7 +55,7 @@ public class Game {
         return fail >= MAX_FAIL;
     }
 
-    private void showRandomLetters(int count) {
+    private void openRandomLetters(int count) {
         List<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < word.size(); i++) {
             numbers.add(i);

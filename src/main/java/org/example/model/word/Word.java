@@ -1,7 +1,6 @@
 package org.example.model.word;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -41,17 +40,17 @@ public class Word implements Iterable<Letter> {
 
         for (Letter letter : letters) {
             if (letter.symbol == symbol) {
-                letter.show();
+                letter.open();
             }
         }
     }
 
     public void open(int index) {
-        letters.get(index).show();
+        letters.get(index).open();
     }
 
     public void openAll() {
-        letters.forEach(Letter::show);
+        letters.forEach(Letter::open);
     }
 
     public boolean allLettersShown() {

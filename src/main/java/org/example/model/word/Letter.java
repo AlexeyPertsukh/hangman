@@ -22,7 +22,7 @@ public class Letter {
         return visible;
     }
 
-    protected void show() {
+    protected void open() {
         visible = SHOW;
     }
 }

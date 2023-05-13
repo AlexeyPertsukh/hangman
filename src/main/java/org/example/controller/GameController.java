@@ -27,10 +27,12 @@ public class GameController {
 
     public void go() {
         CharDialogView dialog = new CharDialogView(printer, reader, "введите букву: ", "ошибка ввода");
+
         while (true) {
             String[] picture = PictureFactory.create(game.getFail());
             printer.output(picture);
-            printer.output(wordToString(game.getWord()));
+            String stringWord = wordToString(game.getWord());
+            printer.output(stringWord);
             printEnteredSymbols(game.getSymbols());
 
             if (game.isWin()) {
