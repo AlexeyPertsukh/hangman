@@ -4,7 +4,7 @@ import org.example.controller.factory.PictureFactory;
 import org.example.model.Game;
 import org.example.model.repository.Repository;
 import org.example.model.word.Word;
-import org.example.view.dialog.CharDialogView;
+import org.example.view.dialog.CharLetterDialogView;
 import org.example.view.printer.Printer;
 import org.example.view.reader.Reader;
 
@@ -26,7 +26,7 @@ public class GameController {
 
     public void go() {
         game.openRandomLetters(OPEN_LETTERS);
-        CharDialogView dialog = new CharDialogView(printer, reader, "введите букву: ", "ошибка ввода");
+        CharLetterDialogView dialog = new CharLetterDialogView(printer, reader, "введите букву: ", "ошибка ввода");
 
         while (true) {
             String[] picture = PictureFactory.create(game.getFailCount());
