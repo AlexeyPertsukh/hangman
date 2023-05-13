@@ -1,9 +1,6 @@
 package org.example.model.word;
 
 public class Letter {
-    public static final boolean DISABLE = false;
-    public static final boolean ENABLE = true;
-
     protected char symbol;
     protected boolean visible;
 
@@ -13,7 +10,7 @@ public class Letter {
 
     public char getSymbol() {
         if (!visible) {
-            throw new IllegalArgumentException("symbol not shown");
+            throw new IllegalArgumentException("symbol getting fail: letter not open");
         }
         return symbol;
     }
@@ -23,6 +20,6 @@ public class Letter {
     }
 
     protected void open() {
-        visible = ENABLE;
+        visible = true;
     }
 }
