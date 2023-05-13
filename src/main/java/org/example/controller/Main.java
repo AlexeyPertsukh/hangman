@@ -4,7 +4,6 @@ import org.example.model.file_reader.BasicFileReader;
 import org.example.model.file_reader.MyFileReader;
 import org.example.model.repository.FileRepository;
 import org.example.model.repository.Repository;
-import org.example.model.word.Word;
 import org.example.view.printer.ConsolePrinter;
 import org.example.view.printer.Printer;
 import org.example.view.reader.KeyboardReader;
