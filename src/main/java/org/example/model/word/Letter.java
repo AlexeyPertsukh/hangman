@@ -1,18 +1,18 @@
 package org.example.model.word;
 
 public class Letter {
-    protected char symbol;
+    protected char value;
     protected boolean visible;
 
-    public Letter(char symbol) {
-        this.symbol = symbol;
+    public Letter(char value) {
+        this.value = value;
     }
 
-    public char getSymbol() {
+    public char getValue() {
         if (!visible) {
             throw new IllegalArgumentException("symbol getting fail: letter not open");
         }
-        return symbol;
+        return value;
     }
 
     public boolean isVisible() {

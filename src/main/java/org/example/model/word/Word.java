@@ -23,7 +23,7 @@ public class Word implements Iterable<Letter> {
         symbol = Character.toUpperCase(symbol);
 
         for (Letter letter : letters) {
-            if (letter.symbol == symbol) {
+            if (letter.value == symbol) {
                 return true;
             }
         }
@@ -39,7 +39,7 @@ public class Word implements Iterable<Letter> {
         symbol = Character.toUpperCase(symbol);
 
         for (Letter letter : letters) {
-            if (letter.symbol == symbol) {
+            if (letter.value == symbol) {
                 letter.open();
             }
         }

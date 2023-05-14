@@ -33,7 +33,7 @@ public class GameController {
             printer.output(picture);
             String stringWord = wordToString(game.getWord());
             printer.output(stringWord);
-            printEnteredSymbols(game.getSymbols());
+            printEnteredSymbols();
 
             if (game.isWin()) {
                 printWin();
@@ -51,11 +51,11 @@ public class GameController {
         }
     }
 
-    private String wordToString(Word word) {
+    private static String wordToString(Word word) {
         StringBuilder builder = new StringBuilder();
         word.forEach(letter -> {
             if (letter.isVisible()) {
-                builder.append(letter.getSymbol());
+                builder.append(letter.getValue());
             } else {
                 builder.append('_');
             }
@@ -63,7 +63,8 @@ public class GameController {
         return builder.toString();
     }
 
-    private void printEnteredSymbols(List<Character> symbols) {
+    private void printEnteredSymbols() {
+        List<Character> symbols = game.getSymbols();
         if (symbols.isEmpty()) {
             printer.output("");
             return;
