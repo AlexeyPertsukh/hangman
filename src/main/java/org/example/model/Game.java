@@ -28,7 +28,7 @@ public class Game {
         symbols.add(symbol);
 
         if(word.contains(symbol)) {
-            word.open(symbol);
+            word.openLetter(symbol);
         } else {
             failCount++;
         }
@@ -61,7 +61,7 @@ public class Game {
         }
         Collections.shuffle(numbers);
         for (int i = 0; i < number; i++) {
-            word.open(i);
+            word.openLetter(i);
         }
 
     }

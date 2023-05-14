@@ -8,8 +8,7 @@ public class Word implements Iterable<Letter> {
     private final List<Letter> letters = new ArrayList<>();
 
     public Word(String s) {
-        char[] chars = s.toUpperCase().toCharArray();
-        for (char symbol : chars) {
+        for (char symbol : s.toUpperCase().toCharArray()) {
             letters.add(new Letter(symbol));
         }
 
@@ -23,7 +22,7 @@ public class Word implements Iterable<Letter> {
         symbol = Character.toUpperCase(symbol);
 
         for (Letter letter : letters) {
-            if (letter.value == symbol) {
+            if (letter.getValue() == symbol) {
                 return true;
             }
         }
@@ -31,7 +30,7 @@ public class Word implements Iterable<Letter> {
         return false;
     }
 
-    public void open(char symbol) {
+    public void openLetter(char symbol) {
         if (!contains(symbol)) {
             throw new IllegalArgumentException("character missing: " + symbol);
         }
@@ -39,17 +38,17 @@ public class Word implements Iterable<Letter> {
         symbol = Character.toUpperCase(symbol);
 
         for (Letter letter : letters) {
-            if (letter.value == symbol) {
+            if (letter.getValue() == symbol) {
                 letter.open();
             }
         }
     }
 
-    public void open(int index) {
+    public void openLetter(int index) {
         letters.get(index).open();
     }
 
-    public void openAll() {
+    public void openAllLetters() {
         letters.forEach(Letter::open);
     }
 

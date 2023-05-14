@@ -88,7 +88,7 @@ public class GameController {
 
     private void printLoose() {
         printer.output("Вы проиграли...");
-        game.getWord().openAll();
+        game.getWord().openAllLetters();
         printer.output("[" + wordToString(game.getWord()) + "]");
     }
 
