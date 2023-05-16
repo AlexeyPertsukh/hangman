@@ -1,7 +1,7 @@
 package org.example.model.word;
 
 public class Letter {
-    private char value;
+    private final char value;
     private boolean visible;
 
     public Letter(char value) {
