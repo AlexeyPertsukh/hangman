@@ -46,7 +46,7 @@ public class GameController {
             }
 
             char symbol = dialog.input();
-            game.addSymbol(symbol);
+            game.addSymbol(Character.toUpperCase(symbol));
 
         }
     }
