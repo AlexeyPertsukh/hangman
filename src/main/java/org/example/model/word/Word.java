@@ -10,7 +10,7 @@ public class Word implements Iterable<Letter> {
     public Word(String s) {
         letters = new Letter[s.length()];
         int index = 0;
-        for (char symbol : s.toUpperCase().toCharArray()) {
+        for (char symbol : s.toCharArray()) {
             letters[index++] = new Letter(symbol);
         }
 
@@ -21,7 +21,6 @@ public class Word implements Iterable<Letter> {
     }
 
     public boolean contains(char value) {
-        value = Character.toUpperCase(value);
 
         for (Letter letter : letters) {
             if (letter.getValue() == value) {
@@ -36,8 +35,6 @@ public class Word implements Iterable<Letter> {
         if (!contains(value)) {
             throw new IllegalArgumentException("character missing: " + value);
         }
-
-        value = Character.toUpperCase(value);
 
         for (Letter letter : letters) {
             if (letter.getValue() == value) {

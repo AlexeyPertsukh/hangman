@@ -20,7 +20,7 @@ public class GameController {
         this.printer = printer;
         this.reader = reader;
 
-        Word word = new Word(repository.getRandom());
+        Word word = new Word(repository.getRandom().toUpperCase());
         game = new Game(word);
     }
 
@@ -46,7 +46,7 @@ public class GameController {
             }
 
             char symbol = dialog.input();
-            game.addSymbol(symbol);
+            game.addSymbol(Character.toUpperCase(symbol));
 
         }
     }
